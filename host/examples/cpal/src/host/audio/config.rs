@@ -376,7 +376,10 @@ fn find_matching_output_config(
         .expect("No config supported by output device");
 
     let (min_buffer_size, max_buffer_size) = match best_stream_config.buffer_size() {
-        SupportedBufferSize::Range { min, max } => (*min, 1024.clamp(*min, *max)),
+        SupportedBufferSize::Range { min, max } => {
+            let min_val = (*min).max(1); // 0 is incompatible with some Clap plugins
+            (min_val, 1024.clamp(min_val, *max))
+        }
         SupportedBufferSize::Unknown => (1, 1024),
     };
 
