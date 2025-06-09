@@ -8,7 +8,7 @@ publish = false
 [dependencies]
 clack-host = { workspace = true, features = ["default"] }
 clack-extensions = { workspace = true, features = ["clack-host", "audio-ports", "note-ports", "gui", "log", "params", "timer", "raw-window-handle_06"] }
-cpal = "0.15.2"
+cpal = { version = "0.15.2", features = ["asio"] }
 crossbeam-channel = "0.5.8"
 clap = { version = "=4.4", features = ["derive"] } # 4.4.x is latest for MSRV 1.70
 dirs = "5.0.1"
