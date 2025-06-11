@@ -7,6 +7,7 @@ members = [
     "extensions",
     # Examples
     "host/examples/cpal",
+    "host/examples/rtaudio-rs",
     "plugin/examples/gain",
     "plugin/examples/polysynth",
 ]
