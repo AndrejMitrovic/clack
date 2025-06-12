@@ -5,12 +5,7 @@ use clack_extensions::audio_ports::{
 use clack_host::prelude::{
     ClapId, PluginAudioConfiguration, PluginInstance, PluginMainThreadHandle,
 };
-// use cpal::traits::DeviceTrait;
-// use cpal::{
-//     BufferSize, Device, SampleFormat, SampleRate, StreamConfig, SupportedBufferSize,
-//     SupportedStreamConfigRange,
-// };
-use std::cmp::Ordering;
+
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 use rtaudio::{DeviceInfo, SampleFormat};
@@ -18,7 +13,7 @@ use rtaudio::SampleFormat::Float32;
 
 /// A full audio configuration.
 ///
-/// This contains everything needed to set up a CPAL stream and CLAP plugin audio buffers.
+/// This contains everything needed to set up an RtAudio stream and CLAP plugin audio buffers.
 pub struct FullAudioConfig {
     /// Configuration for the plugin's input ports.
     pub plugin_input_port_config: PluginAudioPortsConfig,
